@@ -143,33 +143,24 @@ namespace UnityEngine.UI
             // The multiple display system is not supported on all platforms, when it is not supported the returned position
             // will be all zeros so when the returned index is 0 we will default to the event data to be safe.
             Vector3 eventPosition = MultipleDisplayUtilities.RelativeMouseAtScaled(eventData.position);
-            if (eventPosition != Vector3.zero)
-            {
-                // We support multiple display on some platforms. When supported:
-                //  - InputSystem will set eventData.displayIndex
-                //  - Old Input System will set eventPosition.z
-#if ENABLE_INPUT_SYSTEM
-                eventPosition.z = eventData.displayIndex;
-#endif
-
-                // Discard events that are not part of this display so the user does not interact with multiple displays at once.
-                if ((int) eventPosition.z != displayIndex)
-                    return;
-            }
-            else
+            if (eventPosition == Vector3.zero)
             {
                 eventPosition = eventData.position;
-#if ENABLE_INPUT_SYSTEM
-                eventPosition.z = eventData.displayIndex;
-                if ((int) eventPosition.z != displayIndex)
-                    return;
-#elif UNITY_EDITOR
+#if UNITY_EDITOR
                 eventPosition.z = Display.activeEditorGameViewTarget;
-                if ((int) eventPosition.z != displayIndex)
-                    return;
 #endif
                 // We don't really know in which display the event occurred. We will process the event assuming it occurred in our display.
             }
+
+                // We support multiple display on some platforms. When supported:
+                //  - InputSystem will set eventData.displayIndex
+                //  - Old Input System will set eventPosition.z
+#if ENABLE_INPUT_SYSTEM && PACKAGE_INPUTSYSTEM
+                eventPosition.z = eventData.displayIndex;
+#endif
+                // Discard events that are not part of this display so the user does not interact with multiple displays at once.
+                if ((int) eventPosition.z != displayIndex)
+                    return;
 
             // Convert to view space
             Vector2 pos;

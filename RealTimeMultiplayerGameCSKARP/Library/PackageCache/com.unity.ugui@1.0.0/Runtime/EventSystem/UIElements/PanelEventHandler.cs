@@ -11,7 +11,7 @@ namespace UnityEngine.UIElements
     [AddComponentMenu("UI Toolkit/Panel Event Handler (UI Toolkit)")]
     public class PanelEventHandler : UIBehaviour, IPointerMoveHandler, IPointerUpHandler, IPointerDownHandler,
         ISubmitHandler, ICancelHandler, IMoveHandler, IScrollHandler, ISelectHandler, IDeselectHandler,
-        IPointerExitHandler, IPointerEnterHandler, IRuntimePanelComponent
+        IPointerExitHandler, IPointerEnterHandler, IRuntimePanelComponent, IPointerClickHandler
     {
         private BaseRuntimePanel m_Panel;
 
@@ -183,6 +183,11 @@ namespace UnityEngine.UIElements
                 return;
 
             m_Panel.PointerEntersPanel(m_PointerEvent.pointerId, m_PointerEvent.position);
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+
         }
 
         public void OnSubmit(BaseEventData eventData)

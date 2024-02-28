@@ -6,7 +6,7 @@ using UnityEngine;
 public class OnStartup : MonoBehaviour
 {   
     public GameObject obj;
-    private bool isOccupied = false;
+    public bool isOccupied = false;
     MeshRenderer m_Render;
     Color OriginalColor;
     // Start is called before the first frame update

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RayCaster : MonoBehaviour
 {
+
+    public Material green;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,9 @@ public class RayCaster : MonoBehaviour
             if(Physics.Raycast(ray, out hit))
             {
                 Debug.Log("Hit: " + hit.collider.gameObject.name);
-            }
+                Material currentMat = hit.collider.gameObject.GetComponent<Renderer>().material;
+                hit.collider.gameObject.GetComponent<Renderer>().material.color = currentMat.color - new Color(0, 0, 0, 255);
+        }
         }
     }
 }

@@ -11,6 +11,20 @@ Assets/AssetStoreTools*
 [Bb]uilds\
 Assets\AssetStoreTools*
 
+RealTimeMultiplayerGameCSKARP/[Ll]ibrary/
+RealTimeMultiplayerGameCSKARP/[Tt]emp/
+RealTimeMultiplayerGameCSKARP/[Oo]bj/
+RealTimeMultiplayerGameCSKARP/[Bb]uild/
+RealTimeMultiplayerGameCSKARP/[Bb]uilds/
+RealTimeMultiplayerGameCSKARP/Assets/AssetStoreTools*
+RealTimeMultiplayerGameCSKARP\[Ll]ibrary\
+RealTimeMultiplayerGameCSKARP\[Tt]emp\
+RealTimeMultiplayerGameCSKARP\[Oo]bj\
+RealTimeMultiplayerGameCSKARP\[Bb]uild\
+RealTimeMultiplayerGameCSKARP\[Bb]uilds\
+RealTimeMultiplayerGameCSKARP\Assets\AssetStoreTools*
+
+
 # Visual Studio 2015 cache directory
 .vs/
 .vs\
@@ -41,3 +55,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+RealTimeMultiplayerGameCSKARP/.vsconfig
+RealTimeMultiplayerGameCSKARP/Library/
+RealTimeMultiplayerGameCSKARP/Library
+

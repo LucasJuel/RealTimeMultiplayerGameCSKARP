@@ -23,6 +23,7 @@ public class PlaneInstantiator : MonoBehaviour
                 float zPos = j * distanceBetweenPlanes;
                 Vector3 planePosition = new Vector3(xPos, 0f, zPos);
                 GameObject plane = Instantiate(planePrefab, planePosition, Quaternion.identity);
+                plane.tag = "Field";
                 plane.transform.localScale = planePrefab.transform.localScale * 12f;
                 plane.transform.rotation = Quaternion.Euler(-90, 0, 0);
                 plane.AddComponent<OnStartup>();

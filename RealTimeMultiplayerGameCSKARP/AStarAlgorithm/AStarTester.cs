@@ -55,7 +55,6 @@ public class AStarTester{
             foreach (Vector2Int Coord in path)
             {
                 gridPattern[Coord.x, Coord.y] = 2;
-                Console.WriteLine(Coord.x + ", " + Coord.y);
             }
             for (int x = 0; x < width; x++)
             {
@@ -86,7 +85,6 @@ public class AStarTester{
     
     public static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
 
         // Run the A* test
         RunAStarTest();
